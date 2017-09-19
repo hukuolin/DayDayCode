@@ -1,0 +1,4 @@
+﻿尝试加载 Oracle 客户端库时引发 BadImageFormatException。如果在安装 32 位 Oracle 客户端组件的情况下以 64 位模式运行，将出现此问题。
+
+问题出现原因：
+安装的Oracle位64位，但是在代码中使用到的System.Data.OracleClient 对应于32 位客户端
