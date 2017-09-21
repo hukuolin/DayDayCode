@@ -45,8 +45,30 @@ namespace OracleService
                 comm.ExecuteNonQuery();
             }
             catch (Exception ex)
-            {
+            {//如果数据库可以连接此时才需要进行数据库的关闭
             
+            }
+        }
+        public void ListChange(string cmd,List<OracleParameter[]> param) 
+        {
+            OracleConnection conn = new OracleConnection(ConnString);
+            try
+            {
+                conn.Open();
+                OracleCommand comm = new OracleCommand();
+                Console.WriteLine("only open once->");
+                Console.WriteLine("Start:->" + DateTime.Now);
+                comm.CommandText = cmd;
+                foreach (OracleParameter[]  items in param)
+                {
+                    comm.Parameters.AddRange(items);
+                    comm.ExecuteNonQuery();
+                }
+                Console.WriteLine("End->"+DateTime.Now);
+            }
+            catch (Exception ex)
+            {
+
             }
         }
     }
