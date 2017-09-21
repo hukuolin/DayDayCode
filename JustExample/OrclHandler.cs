@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using OracleService;
 using System.Data;
 using System.Data.OracleClient;
+using System.Configuration;
 namespace JustExample
 {
     public class OrclHandler
@@ -30,6 +31,30 @@ namespace JustExample
         public void BatchInsert(int size)
         {
         
+        }
+        public void TestRemote() 
+        {
+            string connString = ConfigurationManager.AppSettings["SMPSDBConnection"];
+            ParamCmd pm = new ParamCmd(connString);
+            string sql = @"select t.User_Name,
+                                       t.USER_CODE,
+                                       t.PASSWORDS,
+                                       t.DEPT_CODE,
+                                       s.dept_name, s.filiale,
+                                       t.SEX,
+                                       t.PHONE,
+                                       t.PASS_MODIFY_DATE,
+                                       t.PASS_VALID_DATE,
+                                       t.VALID_FLAG,
+                                       t.VALID_DATE,
+                                       t.E_MAIL,
+                                       t.AccessType,
+                                       S.valid_flag Module_Flag,
+                                       t.AD_ACTIVE,
+                                       t.PHOTO_URL
+                                  from T_SYS_USER t, t_sys_dept s
+                                 Where t.dept_code = s.dept_code";
+            DataSet ds= pm.Query(sql);
         }
     }
 }
