@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebModel;
 using DataProvider.IService;
+using System.Data;
 namespace DataProvider.Service.Oracle
 {
     public class CrewDataService:ICrewDataService
@@ -33,7 +34,13 @@ connect by prior parent_menu_tag = menu_tag
 Order by l.idx Asc,l.parent_menu_tag Asc,l.menu_tag Asc";
             CallOracleHelper call = new CallOracleHelper(true, DbConnString);
             JsonData json = new JsonData();
-            json.Data = call.OracleQuery(queryMenusCmd);
+            DataSet ds= call.OracleQuery(queryMenusCmd);
+            json.Data = ds;
+            if (ds != null && ds.Tables.Count > 0) 
+            {
+                DataTable table = ds.Tables[0];
+                json.Count = table.Rows.Count;
+            }
             //throw new NotImplementedException();
             return json;
         }

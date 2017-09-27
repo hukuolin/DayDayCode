@@ -22,7 +22,7 @@ namespace DataProviderWebAPI.Controllers
             ICrewDataService crew = new CrewDataService(GlobalCfg.DbConnectionString[GlobalCfg.DbCategory.ToString()]);
             #endregion 此处需要使用工厂模式实现接口的实例化
             MenuDataManage menu = new MenuDataManage(crew);
-            menu.QueryMenus();
+            json= menu.QueryMenus();
             return Json(json,JsonRequestBehavior.AllowGet);
         } 
 
