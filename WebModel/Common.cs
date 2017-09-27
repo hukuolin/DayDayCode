@@ -13,4 +13,10 @@ namespace WebModel
         public bool Result { get; set; }
         public int Count { get; set; }
     }
+    public enum DBType
+    {
+        Oracle = 1,
+        SqlServer = 2,
+        MySql = 3
+    }
 }

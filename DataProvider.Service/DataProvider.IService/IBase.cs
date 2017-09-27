@@ -8,7 +8,7 @@ namespace DataProvider.IService
 {
     public interface IBase
     {
-        string DbConnString { get; set; }
+        string DbConnString { get;}
         bool? Result { get; set; }
         string ExceptionMsg { get; set; }
     }

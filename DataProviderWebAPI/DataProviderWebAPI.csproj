@@ -237,9 +237,17 @@
       <Project>{8b7acfd3-0f8f-403d-a303-c228a60e4279}</Project>
       <Name>BaseHelper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataProvider.Manage\DataProvider.Manage.csproj">
+      <Project>{b771b4fe-8c0e-447c-bb9e-728a596617b4}</Project>
+      <Name>DataProvider.Manage</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataProvider.Service\DataProvider.IService\DataProvider.IService.csproj">
       <Project>{53af69b1-c3f4-4df7-b540-058ed471ffae}</Project>
       <Name>DataProvider.IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataProvider.Service\DataProvider.Service.Oracle\DataProvider.Service.Oracle.csproj">
+      <Project>{8fbb7cba-b942-4164-b621-69df6386c790}</Project>
+      <Name>DataProvider.Service.Oracle</Name>
     </ProjectReference>
     <ProjectReference Include="..\WebModel\WebModel.csproj">
       <Project>{2cb509f3-f762-4c14-929f-18091f9015b2}</Project>

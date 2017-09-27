@@ -5,6 +5,7 @@ using System.Web;
 using System.Reflection;
 using System.IO;
 using BaseHelper;
+using WebModel;
 
 namespace DataProviderWebAPI
 {

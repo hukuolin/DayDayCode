@@ -48,3 +48,7 @@ E:\Code\DayDayStudy\Example\DataProviderWebAPI\bin\BaseHelper.dll
 E:\Code\DayDayStudy\Example\DataProviderWebAPI\bin\BaseHelper.pdb
 E:\Code\DayDayStudy\Example\DataProviderWebAPI\bin\DataProvider.IService.dll
 E:\Code\DayDayStudy\Example\DataProviderWebAPI\bin\DataProvider.IService.pdb
+E:\Code\DayDayStudy\Example\DataProviderWebAPI\bin\DataProvider.Manage.dll
+E:\Code\DayDayStudy\Example\DataProviderWebAPI\bin\DataProvider.Manage.pdb
+E:\Code\DayDayStudy\Example\DataProviderWebAPI\bin\DataProvider.Service.Oracle.dll
+E:\Code\DayDayStudy\Example\DataProviderWebAPI\bin\DataProvider.Service.Oracle.pdb

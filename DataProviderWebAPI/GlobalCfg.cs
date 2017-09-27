@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Configuration;
+using WebModel;
 namespace DataProviderWebAPI
 {
-    public enum DBType 
-    {
-        Oracle=1,
-        SqlServer=2,
-        MySql=3
-    }
+   
     public class GlobalCfg
     {
         static string connCfg = "ConnString";
@@ -25,7 +21,7 @@ namespace DataProviderWebAPI
             DbConnectionString = new Dictionary<string, string>();
             foreach (string item in fields)
             {
-                 ConnectionStringSettings cfg = ConfigurationManager.ConnectionStrings[connCfg + "." + item];
+                ConnectionStringSettings cfg = ConfigurationManager.ConnectionStrings[connCfg + "." + item];
                 string value=cfg==null?null:cfg.ConnectionString;
                 DbConnectionString.Add(item, value);
             }

@@ -39,8 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MenuDataService.cs" />
+    <Compile Include="MenuDataManage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataProvider.Service\DataProvider.IService\DataProvider.IService.csproj">
+      <Project>{53af69b1-c3f4-4df7-b540-058ed471ffae}</Project>
+      <Name>DataProvider.IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebModel\WebModel.csproj">
+      <Project>{2cb509f3-f762-4c14-929f-18091f9015b2}</Project>
+      <Name>WebModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
