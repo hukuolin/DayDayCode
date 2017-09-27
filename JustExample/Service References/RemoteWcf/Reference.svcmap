@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6b102318-7747-45ce-a8cc-1720733465ec" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:808/RemoteDataService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="RemoteDataService.disco" MetadataType="Disco" ID="f4589ac8-e10c-4db1-a968-64c7e5c6cd95" SourceId="1" SourceUrl="http://localhost:808/RemoteDataService.svc?disco" />
+    <MetadataFile FileName="RemoteDataService.xsd" MetadataType="Schema" ID="95b9f349-f600-4b22-ae7f-b7a263d8fe19" SourceId="1" SourceUrl="http://localhost:808/RemoteDataService.svc?xsd=xsd0" />
+    <MetadataFile FileName="RemoteDataService.wsdl" MetadataType="Wsdl" ID="071b22b6-4216-446e-a717-4570a2dc3a47" SourceId="1" SourceUrl="http://localhost:808/RemoteDataService.svc?wsdl" />
+    <MetadataFile FileName="RemoteDataService1.xsd" MetadataType="Schema" ID="20981686-9757-445b-9205-d7274787fcaf" SourceId="1" SourceUrl="http://localhost:808/RemoteDataService.svc?xsd=xsd2" />
+    <MetadataFile FileName="RemoteDataService2.xsd" MetadataType="Schema" ID="4d4a9a01-2793-45fb-ad2c-b284335edb7b" SourceId="1" SourceUrl="http://localhost:808/RemoteDataService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

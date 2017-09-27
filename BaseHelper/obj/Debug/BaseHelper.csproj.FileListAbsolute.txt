@@ -1,0 +1,4 @@
+E:\Code\DayDayStudy\Example\BaseHelper\bin\Debug\BaseHelper.dll
+E:\Code\DayDayStudy\Example\BaseHelper\bin\Debug\BaseHelper.pdb
+E:\Code\DayDayStudy\Example\BaseHelper\obj\Debug\BaseHelper.dll
+E:\Code\DayDayStudy\Example\BaseHelper\obj\Debug\BaseHelper.pdb

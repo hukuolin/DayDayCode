@@ -25,14 +25,21 @@ namespace JustExample
             DateTime time = DateTime.Now;
             orcl.Add(new OracleParameter(":createtime", time));
             orcl.Add(new OracleParameter(":updatetime", time));
-            pc.Excute(cmd, orcl.ToArray());
+            try
+            {
+                pc.Excute(cmd, orcl.ToArray());
+            }
+            catch (Exception ex) 
+            {
+            
+            }
             //DataSet ds=pc.Query(" select * from Category");
         }
         public void BatchInsert(int size)
         {
         
         }
-        public void TestRemote() 
+        public DataSet TestRemote() 
         {
             string connString = ConfigurationManager.AppSettings["SMPSDBConnection"];
             ParamCmd pm = new ParamCmd(connString);
@@ -55,6 +62,7 @@ namespace JustExample
                                   from T_SYS_USER t, t_sys_dept s
                                  Where t.dept_code = s.dept_code";
             DataSet ds= pm.Query(sql);
+            return ds;
         }
     }
 }

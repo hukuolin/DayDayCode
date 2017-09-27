@@ -1,0 +1,8 @@
+E:\Code\DayDayStudy\Example\DayDayStudyWin\bin\Debug\DayDayStudyWin.exe.config
+E:\Code\DayDayStudy\Example\DayDayStudyWin\bin\Debug\DayDayStudyWin.exe
+E:\Code\DayDayStudy\Example\DayDayStudyWin\bin\Debug\DayDayStudyWin.pdb
+E:\Code\DayDayStudy\Example\DayDayStudyWin\obj\Debug\DayDayStudyWin.Form1.resources
+E:\Code\DayDayStudy\Example\DayDayStudyWin\obj\Debug\DayDayStudyWin.Properties.Resources.resources
+E:\Code\DayDayStudy\Example\DayDayStudyWin\obj\Debug\DayDayStudyWin.csproj.GenerateResource.Cache
+E:\Code\DayDayStudy\Example\DayDayStudyWin\obj\Debug\DayDayStudyWin.exe
+E:\Code\DayDayStudy\Example\DayDayStudyWin\obj\Debug\DayDayStudyWin.pdb

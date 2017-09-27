@@ -1,0 +1,9 @@
+E:\Code\DayDayStudy\Example\DataProvider.Service\DataProvider.Service.Oracle\bin\Debug\DataProvider.Service.Oracle.dll
+E:\Code\DayDayStudy\Example\DataProvider.Service\DataProvider.Service.Oracle\bin\Debug\DataProvider.Service.Oracle.pdb
+E:\Code\DayDayStudy\Example\DataProvider.Service\DataProvider.Service.Oracle\obj\Debug\DataProvider.Service.Oracle.dll
+E:\Code\DayDayStudy\Example\DataProvider.Service\DataProvider.Service.Oracle\obj\Debug\DataProvider.Service.Oracle.pdb
+E:\Code\DayDayStudy\Example\DataProvider.Service\DataProvider.Service.Oracle\obj\Debug\DataProvider.Service.Oracle.csprojResolveAssemblyReference.cache
+E:\Code\DayDayStudy\Example\DataProvider.Service\DataProvider.Service.Oracle\bin\Debug\DataProvider.IService.dll
+E:\Code\DayDayStudy\Example\DataProvider.Service\DataProvider.Service.Oracle\bin\Debug\WebModel.dll
+E:\Code\DayDayStudy\Example\DataProvider.Service\DataProvider.Service.Oracle\bin\Debug\WebModel.pdb
+E:\Code\DayDayStudy\Example\DataProvider.Service\DataProvider.Service.Oracle\bin\Debug\DataProvider.IService.pdb
