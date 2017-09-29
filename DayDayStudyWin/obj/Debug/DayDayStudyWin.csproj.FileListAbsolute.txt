@@ -6,3 +6,4 @@ E:\Code\DayDayStudy\Example\DayDayStudyWin\obj\Debug\DayDayStudyWin.Properties.R
 E:\Code\DayDayStudy\Example\DayDayStudyWin\obj\Debug\DayDayStudyWin.csproj.GenerateResource.Cache
 E:\Code\DayDayStudy\Example\DayDayStudyWin\obj\Debug\DayDayStudyWin.exe
 E:\Code\DayDayStudy\Example\DayDayStudyWin\obj\Debug\DayDayStudyWin.pdb
+E:\Code\DayDayStudy\Example\DayDayStudyWin\obj\Debug\DayDayStudyWin.csprojResolveAssemblyReference.cache

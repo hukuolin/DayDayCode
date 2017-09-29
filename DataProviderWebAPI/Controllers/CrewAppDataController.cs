@@ -8,12 +8,15 @@ using WebModel;
 using DataProvider.IService;
 using DataProvider.Manage;
 using DataProvider.Service.Oracle;
+using System.Web.Services;
+using System.ServiceModel.Web;
 namespace DataProviderWebAPI.Controllers
 {
     public class CrewAppDataController : Controller
     {
         [HttpGet]
-        
+        //[WebMethod()]
+        [WebInvoke(Method="Get")]
         public JsonResult GetMenuCfg() 
         {
             JsonData json = new JsonData();
