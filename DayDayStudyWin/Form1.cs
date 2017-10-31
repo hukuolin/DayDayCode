@@ -15,6 +15,12 @@ namespace DayDayStudyWin
         public Form1()
         {
             InitializeComponent();
+            Test();
+        }
+
+        void Test() 
+        {
+            tree.Nodes.Clear();
         }
     }
 }

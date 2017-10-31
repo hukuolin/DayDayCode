@@ -12,4 +12,5 @@ namespace DataProvider.IService
         bool? Result { get; set; }
         string ExceptionMsg { get; set; }
     }
+    
 }

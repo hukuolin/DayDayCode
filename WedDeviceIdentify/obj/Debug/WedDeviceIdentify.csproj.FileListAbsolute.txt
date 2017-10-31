@@ -1,3 +1,4 @@
+E:\Code\DayDayStudy\Example\WedDeviceIdentify\bin\WedDeviceIdentify.dll.config
 E:\Code\DayDayStudy\Example\WedDeviceIdentify\bin\WedDeviceIdentify.dll
 E:\Code\DayDayStudy\Example\WedDeviceIdentify\bin\WedDeviceIdentify.pdb
 E:\Code\DayDayStudy\Example\WedDeviceIdentify\bin\Microsoft.Web.Infrastructure.dll
@@ -32,4 +33,3 @@ E:\Code\DayDayStudy\Example\WedDeviceIdentify\bin\zh-Hans\System.Web.WebPages.De
 E:\Code\DayDayStudy\Example\WedDeviceIdentify\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
 E:\Code\DayDayStudy\Example\WedDeviceIdentify\obj\Debug\WedDeviceIdentify.dll
 E:\Code\DayDayStudy\Example\WedDeviceIdentify\obj\Debug\WedDeviceIdentify.pdb
-E:\Code\DayDayStudy\Example\WedDeviceIdentify\obj\Debug\WedDeviceIdentify.csprojResolveAssemblyReference.cache

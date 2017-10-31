@@ -1,3 +1,4 @@
+E:\Code\DayDayStudy\Example\DataSetWcf\bin\DataSetWcf.dll.config
 E:\Code\DayDayStudy\Example\DataSetWcf\bin\DataSetWcf.dll
 E:\Code\DayDayStudy\Example\DataSetWcf\bin\DataSetWcf.pdb
 E:\Code\DayDayStudy\Example\DataSetWcf\bin\OracleService.dll

@@ -12,12 +12,16 @@ namespace JustExample
         {
 
             DllRelyWhere.GetAllRely(@"E:\Code\AirCode\20代码\HNAiCrew\Library\ICrew\Oracle.DataAccess.dll");
-            OrclHandler orcl = new OrclHandler();
-            DataSet d= orcl.TestRemote();
-          //  orcl.Query();
-            RemoteWcf.RemoteDataServiceClient wcf = new RemoteWcf.RemoteDataServiceClient();
-            DataSet ds= wcf.GetAllAirAccount();
+            DllRelyWhere.GetClass(@"E:\Code\FocChuanAirCode\PMS\PMSSolutions\SunWin.PMS.DAL\bin\Debug\SunWin.PMS.DAL.dll", "SunWin.PMS.DAL.WorkFlowDAL");
             Console.Read();
+        }
+        static void RemoteData() 
+        {
+            OrclHandler orcl = new OrclHandler();
+            DataSet d = orcl.TestRemote();
+            //  orcl.Query();
+            RemoteWcf.RemoteDataServiceClient wcf = new RemoteWcf.RemoteDataServiceClient();
+            DataSet ds = wcf.GetAllAirAccount();
         }
         static void Example() 
         {
@@ -26,9 +30,10 @@ namespace JustExample
             string[] all = list.Split(',');
             List<string> maybe = new List<string>();
             List<string> selelct = new List<string>();
+            string[] collect = list.Split(',');
             foreach (string item in all)
             {
-                if (now.Contains(item))
+                if (collect.Contains(item))
                 {
                     selelct.Add(item);
                 }
