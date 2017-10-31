@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using BaseHelper;
 namespace JustExample
 {
     class Program
     {
         static void Main(string[] args)
         {
-
+            XmlTest();
             DllRelyWhere.GetAllRely(@"E:\Code\AirCode\20代码\HNAiCrew\Library\ICrew\Oracle.DataAccess.dll");
             DllRelyWhere.GetClass(@"E:\Code\FocChuanAirCode\PMS\PMSSolutions\SunWin.PMS.DAL\bin\Debug\SunWin.PMS.DAL.dll", "SunWin.PMS.DAL.WorkFlowDAL");
             Console.Read();
@@ -42,6 +43,13 @@ namespace JustExample
                     maybe.Add(item);
                 }
             }
+        }
+        static void XmlTest() 
+        {
+            AssemblyExt ass = new AssemblyExt();
+            string xmlPath= ass.GetAssemblyPath() + @"\Content\StudentOutSendRegister.xml";
+            AbroadStudentManage abroad = new AbroadStudentManage();
+            abroad.FillDataToXml(xmlPath);
         }
     }
 }

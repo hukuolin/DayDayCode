@@ -6,3 +6,6 @@ E:\Code\DayDayStudy\Example\JustExample\bin\Debug\OracleService.pdb
 E:\Code\DayDayStudy\Example\JustExample\obj\Debug\JustExample.csprojResolveAssemblyReference.cache
 E:\Code\DayDayStudy\Example\JustExample\obj\Debug\JustExample.exe
 E:\Code\DayDayStudy\Example\JustExample\obj\Debug\JustExample.pdb
+E:\Code\DayDayStudy\Example\JustExample\bin\Debug\BaseHelper.dll
+E:\Code\DayDayStudy\Example\JustExample\bin\Debug\BaseHelper.pdb
+E:\Code\DayDayStudy\Example\JustExample\bin\Debug\Content\StudentOutSendRegister.xml

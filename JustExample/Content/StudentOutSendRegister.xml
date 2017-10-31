@@ -1,65 +1,66 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<abroad_student >
+<abroad_student>
   <operation>
-      <compowers>123456789123456789
+      <compowers>
+        {compowers}
         <!--全权用户身份证号，非空-->
       </compowers>
   </operation>
   <pilot>
       <!--基本信息-->
-      <indentitytype>身份证
+      <indentitytype>
+      {indentitytype}
         <!--身份证明类型，非空-->
       </indentitytype>
-      <identifycode>123456789123456789
+      <identifycode>{identifycode}
         <!--身份证明编号，非空-->
       </identifycode>
-      <pilotname>刘书陶
+      <pilotname>{pilotname}
         <!--中文名，中国国籍非空-->
       </pilotname>
-      <pilotnameeng>LIU Shutao
+      <pilotnameeng>{pilotnameeng}
         <!--英文名，非空-->
       </pilotnameeng>
-      <nationality>中国
+      <nationality>{nationality}
         <!--国籍，非空-->
       </nationality>
-      <birthplace>江苏省
+      <birthplace>{birthplace}
         <!--出生地，非空-->
       </birthplace>
-      <birthday>1974-07-14
+      <birthday>{birthday}
         <!--出生日期，非空-->
       </birthday>
-      <sex>0
+      <sex>{sex}
         <!--性别，非空-->
       </sex>
-      <nation>汉
+      <nation>{nation}
         <!--民族，非空-->
       </nation>
-      <mobile>13800000000
+      <mobile>{mobile}
         <!--手机号，非空，合法-->
       </mobile>
-      <manager>中南管理局
+      <manager>{manager}
         <!--管理局，非空-->
       </manager>
-      <org>深航
+      <org>{org}
         <!--单位，非空-->
       </org>
-      <address>深圳
+      <address>{address}
         <!--永久地址，非空-->
       </address>
-      <zipcode>123456
+      <zipcode>{zipcode}
         <!--邮编，非空-->
       </zipcode>
-      <mailaddr>深圳
+      <mailaddr>{mailaddr}
         <!--通信地址，非空-->
       </mailaddr>
-      <xueli>本科
+      <xueli>{xueli}
       <!--中国国籍必填，外籍可选。（本科/硕士研究生/博士研究生/高中/大专/初中/中专）-->
       </xueli>
   </pilot>
-   
   <base>
-      <school_id>24</school_id><!--[外送学校编号]-->
-      <register_date>2013-10-30</register_date><!--[送出日期]-->
-      <isgraduaction>0</isgraduaction><!--[外送注册状态：0.在训;1.停训；4.毕业]-->
+      <school_id>{school_id}</school_id><!--[外送学校编号]-->
+      <register_date>{register_date}</register_date><!--[送出日期]-->
+      <isgraduaction>{isgraduaction}</isgraduaction><!--[外送注册状态：0.在训;1.停训；4.毕业]-->
   </base>
 </abroad_student>

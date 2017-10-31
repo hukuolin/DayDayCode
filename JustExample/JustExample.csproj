@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbroadStudent\AbroadStudent.cs" />
     <Compile Include="Common\AppConfig.cs" />
     <Compile Include="DllRelyWhere.cs" />
     <Compile Include="OrclHandler.cs" />
@@ -73,6 +74,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BaseHelper\BaseHelper.csproj">
+      <Project>{8b7acfd3-0f8f-403d-a303-c228a60e4279}</Project>
+      <Name>BaseHelper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OracleService\OracleService.csproj">
       <Project>{4ce97331-8e6a-45e9-bdbc-7555c0a0eab1}</Project>
       <Name>OracleService</Name>
@@ -103,7 +108,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\StudentOutSendRegister.xml" />
+    <EmbeddedResource Include="Content\StudentOutSendRegister.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

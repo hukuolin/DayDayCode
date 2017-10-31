@@ -23,7 +23,7 @@ namespace BaseHelper
             foreach (var item in pv)
             {
                string value=  waitFillData.GetPropertyValueString(item);
-               xml = xml.Replace(string.Format("{0}", item), value);
+               xml = xml.Replace("{"+item+"}", value);
             }
             return xml;
         }
@@ -38,9 +38,10 @@ namespace BaseHelper
             MemoryStream ms = new MemoryStream();
             fs.Seek(0, SeekOrigin.Begin);
             StreamReader sr = new StreamReader(fs);
+            text = sr.ReadToEnd();
             sr.Dispose();
             fs.Dispose();
-            return sr.ReadLine();
+            return text;
         } 
 
     }

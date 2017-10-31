@@ -16,7 +16,9 @@ namespace BaseHelper
         /// <returns></returns>
         public static string[] GetProperties<T>(this T obj) where T:class
         {
-           Type t= typeof(T).GetType();
+           //Type t= typeof(T).GetType();//获取到的属性与实际属性不一致
+            Type t = System.Activator.CreateInstance<T>().GetType();
+           PropertyInfo[] pi = t.GetProperties();//实体自定义的全部属性
            string[] pns= t.GetProperties().Select(s => s.Name).ToArray();
            return pns;
         }
@@ -29,7 +31,7 @@ namespace BaseHelper
         /// <returns>字符串</returns>
         public static string GetPropertyValueString<T>(this T obj,string propertyName) where T : class
         {
-            Type t= typeof(T).GetType();
+            Type t=obj.GetType() ;//System.Activator.CreateInstance<T>().GetType();
             PropertyInfo pi= t.GetProperty(propertyName);
             //此处需要判断该该属性的数据类型是否对应class
             Type pt = pi.PropertyType;//该属性的数据类型
