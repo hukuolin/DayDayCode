@@ -8,7 +8,8 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
-
+using BaseHelper;
+using System.Configuration;
 namespace DataSetWcf
 {
     // 注意: 使用“重构”菜单上的“重命名”命令，可以同时更改代码、svc 和配置文件中的类名“Service1”。
@@ -39,6 +40,15 @@ namespace DataSetWcf
                                  Where t.dept_code = s.dept_code";
             DataSet ds = pm.Query(sql);
             return ds;
+        }
+        public string UploadAbroadStudent(string xml) 
+        {
+            string statue = string.Empty;
+            string dir = new AssemblyExt().GetAppDir(AppStruct.Web) +"/"+ ConfigurationManager.AppSettings["LogRelativeDir"];
+            string file = DateTime.Now.ToString("yyyyMMddHHmm") + ".log";
+            LoggerHeper log = new LoggerHeper();
+            log.WriteLog(xml, dir, file, false);
+            return statue;
         }
     }
 }

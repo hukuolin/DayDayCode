@@ -13,16 +13,35 @@
   <wsdl:message name="IRemoteDataService_GetAllAirAccount_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllAirAccountResponse" />
   </wsdl:message>
+  <wsdl:message name="IRemoteDataService_UploadAbroadStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadAbroadStudent" />
+  </wsdl:message>
+  <wsdl:message name="IRemoteDataService_UploadAbroadStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadAbroadStudentResponse" />
+  </wsdl:message>
   <wsdl:portType name="IRemoteDataService">
     <wsdl:operation name="GetAllAirAccount">
       <wsdl:input wsaw:Action="http://tempuri.org/IRemoteDataService/GetAllAirAccount" message="tns:IRemoteDataService_GetAllAirAccount_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IRemoteDataService/GetAllAirAccountResponse" message="tns:IRemoteDataService_GetAllAirAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadAbroadStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IRemoteDataService/UploadAbroadStudent" message="tns:IRemoteDataService_UploadAbroadStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IRemoteDataService/UploadAbroadStudentResponse" message="tns:IRemoteDataService_UploadAbroadStudent_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IRemoteDataService" type="tns:IRemoteDataService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetAllAirAccount">
       <soap:operation soapAction="http://tempuri.org/IRemoteDataService/GetAllAirAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadAbroadStudent">
+      <soap:operation soapAction="http://tempuri.org/IRemoteDataService/UploadAbroadStudent" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

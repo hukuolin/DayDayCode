@@ -49,7 +49,9 @@ namespace JustExample
             AssemblyExt ass = new AssemblyExt();
             string xmlPath= ass.GetAssemblyPath() + @"\Content\StudentOutSendRegister.xml";
             AbroadStudentManage abroad = new AbroadStudentManage();
-            abroad.FillDataToXml(xmlPath);
+            string  xml= abroad.FillDataToXml(xmlPath);
+            RemoteWcf.RemoteDataServiceClient rds = new RemoteWcf.RemoteDataServiceClient();
+            rds.UploadAbroadStudent(xml);
         }
     }
 }

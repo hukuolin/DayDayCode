@@ -31,6 +31,6 @@ E:\Code\DayDayStudy\Example\WedDeviceIdentify\bin\zh-Hans\System.Web.Razor.resou
 E:\Code\DayDayStudy\Example\WedDeviceIdentify\bin\zh-Hans\System.Web.WebPages.resources.dll
 E:\Code\DayDayStudy\Example\WedDeviceIdentify\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 E:\Code\DayDayStudy\Example\WedDeviceIdentify\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+E:\Code\DayDayStudy\Example\WedDeviceIdentify\obj\Debug\WedDeviceIdentify.csprojResolveAssemblyReference.cache
 E:\Code\DayDayStudy\Example\WedDeviceIdentify\obj\Debug\WedDeviceIdentify.dll
 E:\Code\DayDayStudy\Example\WedDeviceIdentify\obj\Debug\WedDeviceIdentify.pdb
-E:\Code\DayDayStudy\Example\WedDeviceIdentify\obj\Debug\WedDeviceIdentify.csprojResolveAssemblyReference.cache

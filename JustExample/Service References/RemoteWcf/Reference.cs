@@ -20,6 +20,12 @@ namespace JustExample.RemoteWcf {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRemoteDataService/GetAllAirAccount", ReplyAction="http://tempuri.org/IRemoteDataService/GetAllAirAccountResponse")]
         System.Threading.Tasks.Task<System.Data.DataSet> GetAllAirAccountAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRemoteDataService/UploadAbroadStudent", ReplyAction="http://tempuri.org/IRemoteDataService/UploadAbroadStudentResponse")]
+        string UploadAbroadStudent(string xml);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IRemoteDataService/UploadAbroadStudent", ReplyAction="http://tempuri.org/IRemoteDataService/UploadAbroadStudentResponse")]
+        System.Threading.Tasks.Task<string> UploadAbroadStudentAsync(string xml);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -55,6 +61,14 @@ namespace JustExample.RemoteWcf {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> GetAllAirAccountAsync() {
             return base.Channel.GetAllAirAccountAsync();
+        }
+        
+        public string UploadAbroadStudent(string xml) {
+            return base.Channel.UploadAbroadStudent(xml);
+        }
+        
+        public System.Threading.Tasks.Task<string> UploadAbroadStudentAsync(string xml) {
+            return base.Channel.UploadAbroadStudentAsync(xml);
         }
     }
 }

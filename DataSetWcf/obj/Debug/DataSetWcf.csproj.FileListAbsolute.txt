@@ -1,7 +1,9 @@
 E:\Code\DayDayStudy\Example\DataSetWcf\bin\DataSetWcf.dll.config
 E:\Code\DayDayStudy\Example\DataSetWcf\bin\DataSetWcf.dll
 E:\Code\DayDayStudy\Example\DataSetWcf\bin\DataSetWcf.pdb
+E:\Code\DayDayStudy\Example\DataSetWcf\bin\BaseHelper.dll
 E:\Code\DayDayStudy\Example\DataSetWcf\bin\OracleService.dll
+E:\Code\DayDayStudy\Example\DataSetWcf\bin\BaseHelper.pdb
 E:\Code\DayDayStudy\Example\DataSetWcf\bin\OracleService.pdb
 E:\Code\DayDayStudy\Example\DataSetWcf\obj\Debug\DataSetWcf.csprojResolveAssemblyReference.cache
 E:\Code\DayDayStudy\Example\DataSetWcf\obj\Debug\DataSetWcf.dll

@@ -15,6 +15,8 @@ namespace DataSetWcf
 
         [OperationContract]
         DataSet GetAllAirAccount();
+        [OperationContract]
+        string UploadAbroadStudent(string xml);
     }
 
    

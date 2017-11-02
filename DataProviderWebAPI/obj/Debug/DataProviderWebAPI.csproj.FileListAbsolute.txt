@@ -1,4 +1,3 @@
-E:\Code\DayDayStudy\Example\DataProviderWebAPI\obj\Debug\DataProviderWebAPI.csprojResolveAssemblyReference.cache
 E:\Code\DayDayStudy\Example\DataProviderWebAPI\bin\DataProviderWebAPI.dll.config
 E:\Code\DayDayStudy\Example\DataProviderWebAPI\bin\DataProviderWebAPI.dll
 E:\Code\DayDayStudy\Example\DataProviderWebAPI\bin\DataProviderWebAPI.pdb
@@ -51,5 +50,6 @@ E:\Code\DayDayStudy\Example\DataProviderWebAPI\bin\zh-Hans\System.Web.Razor.reso
 E:\Code\DayDayStudy\Example\DataProviderWebAPI\bin\zh-Hans\System.Web.WebPages.resources.dll
 E:\Code\DayDayStudy\Example\DataProviderWebAPI\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 E:\Code\DayDayStudy\Example\DataProviderWebAPI\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
+E:\Code\DayDayStudy\Example\DataProviderWebAPI\obj\Debug\DataProviderWebAPI.csprojResolveAssemblyReference.cache
 E:\Code\DayDayStudy\Example\DataProviderWebAPI\obj\Debug\DataProviderWebAPI.dll
 E:\Code\DayDayStudy\Example\DataProviderWebAPI\obj\Debug\DataProviderWebAPI.pdb
