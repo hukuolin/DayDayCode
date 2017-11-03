@@ -1,0 +1,7 @@
+1.web进行文件上传
+后台接收到的HttpPostedFileBase
+ContentType = "image/jpeg"
+ContentLength = 25356
+FileName = "hfz.jpg"
+InputStream = {System.Web.HttpInputStream}  //文件流
+image/jpeg

@@ -1,4 +1,0 @@
-E:\Code\DayDayStudy\Example\OracleService\bin\Debug\OracleService.dll
-E:\Code\DayDayStudy\Example\OracleService\bin\Debug\OracleService.pdb
-E:\Code\DayDayStudy\Example\OracleService\obj\Debug\OracleService.dll
-E:\Code\DayDayStudy\Example\OracleService\obj\Debug\OracleService.pdb

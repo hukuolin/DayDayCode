@@ -108,6 +108,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ImageHelperController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -117,6 +119,29 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\css\bootstrap-3.3.4.css" />
+    <Content Include="Content\css\demo.css" />
+    <Content Include="Content\css\Style.css" />
+    <Content Include="Content\js\bootstrap\bootstrap.min.js" />
+    <Content Include="Content\js\jq\jquery-1.10.2.min.js" />
+    <Content Include="Content\js\webuploader-0.1.5\extend-webuploader.js" />
+    <Content Include="Content\js\webuploader-0.1.5\Uploader.swf" />
+    <Content Include="Content\js\webuploader-0.1.5\webuploader.css" />
+    <Content Include="Content\js\webuploader-0.1.5\webuploader.custom.js" />
+    <Content Include="Content\js\webuploader-0.1.5\webuploader.custom.min.js" />
+    <Content Include="Content\js\webuploader-0.1.5\webuploader.fis.js" />
+    <Content Include="Content\js\webuploader-0.1.5\webuploader.flashonly.js" />
+    <Content Include="Content\js\webuploader-0.1.5\webuploader.flashonly.min.js" />
+    <Content Include="Content\js\webuploader-0.1.5\webuploader.html5only.js" />
+    <Content Include="Content\js\webuploader-0.1.5\webuploader.html5only.min.js" />
+    <Content Include="Content\js\webuploader-0.1.5\webuploader.js" />
+    <Content Include="Content\js\webuploader-0.1.5\webuploader.min.js" />
+    <Content Include="Content\js\webuploader-0.1.5\webuploader.noimage.js" />
+    <Content Include="Content\js\webuploader-0.1.5\webuploader.noimage.min.js" />
+    <Content Include="Content\js\webuploader-0.1.5\webuploader.nolog.js" />
+    <Content Include="Content\js\webuploader-0.1.5\webuploader.nolog.min.js" />
+    <Content Include="Content\js\webuploader-0.1.5\webuploader.withoutimage.js" />
+    <Content Include="Content\js\webuploader-0.1.5\webuploader.withoutimage.min.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -129,8 +154,22 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ImageHelper\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\bootstrap-theme.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebModel\WebModel.csproj">
+      <Project>{2cb509f3-f762-4c14-929f-18091f9015b2}</Project>
+      <Name>WebModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
