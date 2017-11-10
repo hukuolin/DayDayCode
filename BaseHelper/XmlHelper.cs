@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 using System.IO;
+using System.Xml;
 namespace BaseHelper
 {
     public static class XmlHelper
@@ -42,7 +43,38 @@ namespace BaseHelper
             sr.Dispose();
             fs.Dispose();
             return text;
-        } 
+        }
+        public static T ReadXmlNodeContent<T>(this string xmlFile, string contentBelongNode) where T : class
+        {
+            T obj = System.Activator.CreateInstance<T>();
+            XmlDocument xml = new System.Xml.XmlDocument();
+            xml.Load(xmlFile);
+            XmlNode node = xml.SelectSingleNode("//" + contentBelongNode);//直接读取单个节点
+            // XmlNodeList nodes= xml.GetElementsByTagName(contentBelongNode);
+           // XmlNodeList childrens = node.ChildNodes;
+            obj.ReadXmlNodeContent(node);
+            return obj;
+        }
 
+        static void ReadXmlNodeContent<T>(this T obj, XmlNode node) where T:class
+        {
+            if (node.NodeType == XmlNodeType.Comment)
+            {//注释的文本内容不需要进行处理 
+                return;
+            }
+            XmlNodeList childrens=  node.ChildNodes;
+            if (childrens.Count == 0)
+            {//没有子节点，则直接读取该节点的的文本内容 
+                string name = node.ParentNode.Name;//此时节点项已经指向到了文本，需要读取父节点的name
+                string text = node.InnerText;
+                text = string.IsNullOrEmpty(text) ? string.Empty : text.Trim();
+                obj.SetPropertyValue(name, text);
+                return;
+            }
+            foreach (XmlNode item in childrens)
+            {
+                obj.ReadXmlNodeContent(item);
+            }
+        }
     }
 }

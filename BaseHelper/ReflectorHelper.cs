@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
+using System.ComponentModel;
 namespace BaseHelper
 {
     public static class ReflectorHelper
@@ -46,6 +47,26 @@ namespace BaseHelper
                 return null;
             }
             return pv.ToString();
+        }
+        public static void SetPropertyValue<T>(this T obj,string propertyName,object value) where T:class 
+        {
+            Type entity = obj.GetType();
+            PropertyInfo pi= entity.GetProperty(propertyName);
+            if (pi == null)
+            {//没有改属性 
+                return;
+            }
+            Type t = pi.PropertyType;//需要判断属性的值是否为可空类型，如果为可空类型不能直接进行类型转换
+            if (t.Name != typeof(Nullable<>).Name)
+            {
+                pi.SetValue(obj, Convert.ChangeType(value, t,null));
+            }
+            else 
+            {
+                NullableConverter nullableConverter = new NullableConverter(t);//如何获取可空类型属性非空时的数据类型
+                Type nt = nullableConverter.UnderlyingType;
+                pi.SetValue(obj, Convert.ChangeType(value, nt), null);
+            }
         }
     }
 }

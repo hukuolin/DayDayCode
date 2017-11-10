@@ -11,6 +11,7 @@ namespace JustExample
     {
         static void Main(string[] args)
         {
+            VerifyXmlConvertObject();
             XmlTest();
             DllRelyWhere.GetAllRely(@"E:\Code\AirCode\20代码\HNAiCrew\Library\ICrew\Oracle.DataAccess.dll");
             DllRelyWhere.GetClass(@"E:\Code\FocChuanAirCode\PMS\PMSSolutions\SunWin.PMS.DAL\bin\Debug\SunWin.PMS.DAL.dll", "SunWin.PMS.DAL.WorkFlowDAL");
@@ -52,6 +53,11 @@ namespace JustExample
             string  xml= abroad.FillDataToXml(xmlPath);
             RemoteWcf.RemoteDataServiceClient rds = new RemoteWcf.RemoteDataServiceClient();
             rds.UploadAbroadStudent(xml);
+        }
+        static void VerifyXmlConvertObject() 
+        {
+            string dir = new AssemblyExt().GetAppDir(AppStruct.WinApp) + @"\Content\AppStatue.xml";
+            ApplyStatueWcfResponseXml response= dir.ReadXmlNodeContent<ApplyStatueWcfResponseXml>("application");
         }
     }
 }
