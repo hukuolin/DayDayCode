@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using BaseHelper;
+using System.Configuration;
 namespace JustExample
 {
     class Program
     {
         static void Main(string[] args)
         {
+            CallFSOPApi();
             TestCallWebService();
             VerifyXmlConvertObject();
             XmlTest();
@@ -67,5 +69,13 @@ namespace JustExample
             string xmlPath = ass.GetAssemblyPath() + @"\Content\StudentOutSendRegister.xml";
             sws.UploadFile(xmlPath);
         }
+        static void CallFSOPApi() 
+        {
+            AssemblyExt ass = new AssemblyExt();
+            string xmlPath = ass.GetAssemblyPath() + @"\Content\StudentOutSendRegister.xml";
+            StudeyWebService sws = new StudeyWebService();
+            sws.UploadFileToFSOP(xmlPath, "submitLegFlyFSOPXML", AppConfig.FSOPTocken);
+        }
     }
+    
 }

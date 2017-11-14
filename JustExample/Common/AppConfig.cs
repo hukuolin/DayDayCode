@@ -22,5 +22,12 @@ namespace JustExample
                 return connString;
             }
         }
+        public static string FSOPTocken
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["FsopTocken"];
+            }
+        }
     }
 }
