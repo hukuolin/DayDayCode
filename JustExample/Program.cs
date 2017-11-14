@@ -11,6 +11,7 @@ namespace JustExample
     {
         static void Main(string[] args)
         {
+            TestCallWebService();
             VerifyXmlConvertObject();
             XmlTest();
             DllRelyWhere.GetAllRely(@"E:\Code\AirCode\20代码\HNAiCrew\Library\ICrew\Oracle.DataAccess.dll");
@@ -58,6 +59,13 @@ namespace JustExample
         {
             string dir = new AssemblyExt().GetAppDir(AppStruct.WinApp) + @"\Content\AppStatue.xml";
             ApplyStatueWcfResponseXml response= dir.ReadXmlNodeContent<ApplyStatueWcfResponseXml>("application");
+        }
+        static void TestCallWebService()
+        {
+            StudeyWebService sws = new StudeyWebService();
+            AssemblyExt ass = new AssemblyExt();
+            string xmlPath = ass.GetAssemblyPath() + @"\Content\StudentOutSendRegister.xml";
+            sws.UploadFile(xmlPath);
         }
     }
 }

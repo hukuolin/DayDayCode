@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
-
+using WebModel;
+using BaseHelper;
 namespace DataProviderWebService
 {
     /// <summary>
@@ -21,6 +22,14 @@ namespace DataProviderWebService
         public string HelloWorld()
         {
             return "Hello World";
+        }
+        [WebMethod]
+        public JsonData UploadFile(byte[] files) 
+        {
+            JsonData json = new JsonData();
+            int len = files == null ? 0 : files.Length;
+            AppHelper.WriteLog(string.Format(" Call Api ,File length=[{0}]", len));
+            return json;
         }
     }
 }

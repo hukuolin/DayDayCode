@@ -73,12 +73,17 @@
       <DependentUpon>AppDataAPI.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="AppHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BaseHelper\BaseHelper.csproj">
       <Project>{8b7acfd3-0f8f-403d-a303-c228a60e4279}</Project>
       <Name>BaseHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebModel\WebModel.csproj">
+      <Project>{2cb509f3-f762-4c14-929f-18091f9015b2}</Project>
+      <Name>WebModel</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

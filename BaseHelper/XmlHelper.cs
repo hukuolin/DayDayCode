@@ -50,8 +50,6 @@ namespace BaseHelper
             XmlDocument xml = new System.Xml.XmlDocument();
             xml.Load(xmlFile);
             XmlNode node = xml.SelectSingleNode("//" + contentBelongNode);//直接读取单个节点
-            // XmlNodeList nodes= xml.GetElementsByTagName(contentBelongNode);
-           // XmlNodeList childrens = node.ChildNodes;
             obj.ReadXmlNodeContent(node);
             return obj;
         }
