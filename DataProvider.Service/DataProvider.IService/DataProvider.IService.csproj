@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IAsyncDataService.cs" />
     <Compile Include="IBase.cs" />
     <Compile Include="ICrewDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

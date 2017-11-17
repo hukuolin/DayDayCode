@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebHelper;
 using WebModel;
 namespace JustExampleMvc.Controllers
 {
+    [MvcRequestHelperAttribute]
     public class ImageHelperController : BaseController
     {
         //
@@ -24,6 +26,13 @@ namespace JustExampleMvc.Controllers
             }
             HttpPostedFileBase file = files[0];
             file.SaveAs(GenerateFullFileNameNoType() + ".jpg");
+            JsonData json = new JsonData();
+            return Json(json);
+        }
+        [MvcRequestHelper]
+        [MvcActionResultHelperAttribute]
+        public JsonResult AppDebug(CommonRequestParam param) 
+        {
             JsonData json = new JsonData();
             return Json(json);
         }

@@ -32,6 +32,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\Bin\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core">
+      <HintPath>..\Bin\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Quartz">
+      <HintPath>..\Bin\Quartz.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -46,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbroadStudent\AbroadStudent.cs" />
+    <Compile Include="BackStageHelper.cs" />
     <Compile Include="Common\AppConfig.cs" />
     <Compile Include="DllRelyWhere.cs" />
     <Compile Include="OrclHandler.cs" />
@@ -115,9 +125,25 @@
       <Project>{8b7acfd3-0f8f-403d-a303-c228a60e4279}</Project>
       <Name>BaseHelper</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataProvider.Model\DataProvider.Model.csproj">
+      <Project>{f39f138e-dbc5-40af-ae70-8e20dec74cbe}</Project>
+      <Name>DataProvider.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataProvider.Service\DataProvider.IService\DataProvider.IService.csproj">
+      <Project>{53af69b1-c3f4-4df7-b540-058ed471ffae}</Project>
+      <Name>DataProvider.IService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataProvider.Service\DataProvider.Service.MsSql\DataProvider.Service.MsSql.csproj">
+      <Project>{0475432d-2812-48b9-8e3c-177f7df87864}</Project>
+      <Name>DataProvider.Service.MsSql</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OracleService\OracleService.csproj">
       <Project>{4ce97331-8e6a-45e9-bdbc-7555c0a0eab1}</Project>
       <Name>OracleService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuartzJobService\QuartzJobService.csproj">
+      <Project>{29198d7e-adfe-4a70-9b1d-fbc72c268697}</Project>
+      <Name>QuartzJobService</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

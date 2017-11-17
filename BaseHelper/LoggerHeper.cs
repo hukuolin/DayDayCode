@@ -28,7 +28,7 @@ namespace BaseHelper
                 }
                 if (appendTimeSpan) 
                 {
-                    text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss fff") + "\r\n" + text;
+                    text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss fff") + "\t" + text+ "\r\n" ;
                 }
                 byte[] bts = Encoding.UTF8.GetBytes(text);
                 fs.Write(bts, 0, bts.Length);
@@ -38,6 +38,19 @@ namespace BaseHelper
             {
             
             }
+        }
+    }
+    public static class SysLogger
+    {
+        public static void WriteLog(this string msg, string logDir)
+        {
+            string LogName = DateTime.Now.ToString("yyyyMMddHH")+".log";
+            LoggerHeper log = new LoggerHeper();
+            if (string.IsNullOrEmpty(logDir))
+            {
+                return;
+            }
+            log.WriteLog(msg, logDir, LogName, true);
         }
     }
 }

@@ -5,10 +5,17 @@ using System.Web;
 using System.Web.Mvc;
 using System.Globalization;
 using System.IO;
+using BaseHelper;
+using WebHelper;
 namespace JustExampleMvc.Controllers
 {
     public class BaseController : Controller
     {
+        public BaseController() 
+        {
+            WebRequestHelper web = new WebRequestHelper();
+            web.GetBrowserData();
+        }
         public string GetUploadDir()
         {
             return Server.MapPath("/Upload");

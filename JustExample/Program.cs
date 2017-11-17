@@ -12,12 +12,14 @@ namespace JustExample
     {
         static void Main(string[] args)
         {
-            CallFSOPApi();
-            TestCallWebService();
-            VerifyXmlConvertObject();
-            XmlTest();
-            DllRelyWhere.GetAllRely(@"E:\Code\AirCode\20代码\HNAiCrew\Library\ICrew\Oracle.DataAccess.dll");
-            DllRelyWhere.GetClass(@"E:\Code\FocChuanAirCode\PMS\PMSSolutions\SunWin.PMS.DAL\bin\Debug\SunWin.PMS.DAL.dll", "SunWin.PMS.DAL.WorkFlowDAL");
+            AsyncQueryData();
+           
+            //CallFSOPApi();
+            //TestCallWebService();
+            //VerifyXmlConvertObject();
+            //XmlTest();
+            //DllRelyWhere.GetAllRely(@"E:\Code\AirCode\20代码\HNAiCrew\Library\ICrew\Oracle.DataAccess.dll");
+            //DllRelyWhere.GetClass(@"E:\Code\FocChuanAirCode\PMS\PMSSolutions\SunWin.PMS.DAL\bin\Debug\SunWin.PMS.DAL.dll", "SunWin.PMS.DAL.WorkFlowDAL");
             Console.Read();
         }
         static void RemoteData() 
@@ -75,6 +77,15 @@ namespace JustExample
             string xmlPath = ass.GetAssemblyPath() + @"\Content\StudentOutSendRegister.xml";
             StudeyWebService sws = new StudeyWebService();
             sws.UploadFileToFSOP(xmlPath, "submitLegFlyFSOPXML", AppConfig.FSOPTocken);
+        }
+        static void AsyncQueryData() 
+        {
+            //开启异步线程进行数据调度
+            BackStageHelper back = new BackStageHelper();
+            //此处是测试程序是否出现卡死情况
+            back.OpenThreadFun();
+            back.TestThread();
+            //轮询
         }
     }
     
