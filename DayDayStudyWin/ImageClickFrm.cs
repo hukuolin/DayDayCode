@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace DayDayStudyWin
 {
+    enum EleTag
+    {
+        Icon = 1
+    }
     public partial class ImageClickFrm : Form
     {
-        enum EleTag 
-        {
-            Icon=1
-        }
+       
         int smallImgW=0, smallImgH=0;
         public ImageClickFrm()
         {
