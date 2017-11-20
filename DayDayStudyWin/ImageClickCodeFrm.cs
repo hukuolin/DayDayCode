@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Drawing;
 namespace DayDayStudyWin
 {
     public partial class ImageClickCodeFrm : Form
@@ -15,7 +15,7 @@ namespace DayDayStudyWin
         public ImageClickCodeFrm()
         {
             InitializeComponent();
-            InitPicture();
+            InitWaterText(pbCodeImg);
         }
         void InitPicture() 
         {
@@ -46,6 +46,28 @@ namespace DayDayStudyWin
           
            
             this.ResumeLayout(false);
+        }
+        void InitWaterText(PictureBox pb)
+        { //使用水印形式来实现
+           // pb.PictureBoxImage(AppConfig.CodeImg12306Dir);
+            Image img = Bitmap.FromFile(AppConfig.CodeImg12306Dir);
+            Graphics g = Graphics.FromImage(img);
+            int w=img.Width/AppConfig.ImgNormal[0];
+            int h=img.Height/AppConfig.ImgNormal[1];
+            //在图片上生成水印
+            for (int row = 0; row <=AppConfig.ImgNormal[0]; row++)
+            {
+                for (int column = 0; column <=AppConfig.ImgNormal[1]; column++)
+                {
+                    int x = w * column + w / 2;
+                    int y = h * row + h / 2;
+                    Image icon = Bitmap.FromFile(AppConfig.IConDir);
+                    //需要调整图标的大小 22*22
+                    g.DrawImage(icon, new Point(x, y));
+                }
+            }
+            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb.Image = img;
         }
     }
 }
