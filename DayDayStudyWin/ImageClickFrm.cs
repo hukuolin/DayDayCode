@@ -54,7 +54,7 @@ namespace DayDayStudyWin
             int y = mouse.Y / smallImgH + (mouse.Y % smallImgH > 0 ? 1 : 0);
             string icon = "pbIcon"+(AppConfig.ImgNormal[0]*(y-1)+x);
             rtbMouse.Text += mouse.X + "\t" + mouse.Y+"\t"+icon + "\r\n";
-            Control iconEle = this.Controls.FindChild(icon);
+            Control iconEle = this.Controls.Find(icon, false).FirstOrDefault();
             if (iconEle != null)
             {
                 iconEle.Visible = !iconEle.Visible;

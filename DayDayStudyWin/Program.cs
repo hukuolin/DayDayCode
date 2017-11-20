@@ -17,7 +17,7 @@ namespace DayDayStudyWin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ImageClickFrm());
+            Application.Run(new ImageClickCodeFrm());
         }
     }
     public class AppConfig

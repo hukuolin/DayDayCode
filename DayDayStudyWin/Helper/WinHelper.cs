@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 namespace DayDayStudyWin
 {
     public static class WinHelper
@@ -24,6 +26,15 @@ namespace DayDayStudyWin
                 }
             }
             return null;
+        }
+        public static void PictureBoxImage(this PictureBox pb, string imgDir)
+        {
+            if (!File.Exists(imgDir))
+            {
+                return;
+            }
+            pb.SizeMode = PictureBoxSizeMode.StretchImage;
+            pb.Image = Bitmap.FromFile(imgDir);
         }
     }
 }

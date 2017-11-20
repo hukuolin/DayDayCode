@@ -51,6 +51,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ImageClickCodeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImageClickCodeFrm.Designer.cs">
+      <DependentUpon>ImageClickCodeFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ImageClickFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +68,9 @@
     <Compile Include="Helper\WinHelper.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImageClickCodeFrm.resx">
+      <DependentUpon>ImageClickCodeFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ImageClickFrm.resx">
       <DependentUpon>ImageClickFrm.cs</DependentUpon>
