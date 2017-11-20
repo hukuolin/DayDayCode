@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="generateLegFlyFSOPXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PfilePath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="xmldoc">
+              <s:complexType mixed="true">
+                <s:sequence>
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="generateLegFlyFSOPXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="generateLegFlyFSOPXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="submitFSOPImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PfileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myfile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="submitFSOPImageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="submitFSOPImageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAppType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAppID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLicenseNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAppStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAppStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="submitLegFlyFSOPXML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PfileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="myfile" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="submitLegFlyFSOPXMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="submitLegFlyFSOPXMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileWithCallWcf">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fileStream" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="callFunName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="wcfCreateFileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tocken" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadFileWithCallWcfResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="generateLegFlyFSOPXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:generateLegFlyFSOPXML" />
+  </wsdl:message>
+  <wsdl:message name="generateLegFlyFSOPXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:generateLegFlyFSOPXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="submitFSOPImageSoapIn">
+    <wsdl:part name="parameters" element="tns:submitFSOPImage" />
+  </wsdl:message>
+  <wsdl:message name="submitFSOPImageSoapOut">
+    <wsdl:part name="parameters" element="tns:submitFSOPImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAppStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAppStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetAppStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAppStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="submitLegFlyFSOPXMLSoapIn">
+    <wsdl:part name="parameters" element="tns:submitLegFlyFSOPXML" />
+  </wsdl:message>
+  <wsdl:message name="submitLegFlyFSOPXMLSoapOut">
+    <wsdl:part name="parameters" element="tns:submitLegFlyFSOPXMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileWithCallWcfSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadFileWithCallWcf" />
+  </wsdl:message>
+  <wsdl:message name="UploadFileWithCallWcfSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadFileWithCallWcfResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FSOPServerSoap">
+    <wsdl:operation name="generateLegFlyFSOPXML">
+      <wsdl:input message="tns:generateLegFlyFSOPXMLSoapIn" />
+      <wsdl:output message="tns:generateLegFlyFSOPXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="submitFSOPImage">
+      <wsdl:input message="tns:submitFSOPImageSoapIn" />
+      <wsdl:output message="tns:submitFSOPImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppStatus">
+      <wsdl:input message="tns:GetAppStatusSoapIn" />
+      <wsdl:output message="tns:GetAppStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="submitLegFlyFSOPXML">
+      <wsdl:input message="tns:submitLegFlyFSOPXMLSoapIn" />
+      <wsdl:output message="tns:submitLegFlyFSOPXMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileWithCallWcf">
+      <wsdl:input message="tns:UploadFileWithCallWcfSoapIn" />
+      <wsdl:output message="tns:UploadFileWithCallWcfSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FSOPServerSoap" type="tns:FSOPServerSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generateLegFlyFSOPXML">
+      <soap:operation soapAction="http://tempuri.org/generateLegFlyFSOPXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="submitFSOPImage">
+      <soap:operation soapAction="http://tempuri.org/submitFSOPImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppStatus">
+      <soap:operation soapAction="http://tempuri.org/GetAppStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="submitLegFlyFSOPXML">
+      <soap:operation soapAction="http://tempuri.org/submitLegFlyFSOPXML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileWithCallWcf">
+      <soap:operation soapAction="http://tempuri.org/UploadFileWithCallWcf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FSOPServerSoap12" type="tns:FSOPServerSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="generateLegFlyFSOPXML">
+      <soap12:operation soapAction="http://tempuri.org/generateLegFlyFSOPXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="submitFSOPImage">
+      <soap12:operation soapAction="http://tempuri.org/submitFSOPImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetAppStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="submitLegFlyFSOPXML">
+      <soap12:operation soapAction="http://tempuri.org/submitLegFlyFSOPXML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UploadFileWithCallWcf">
+      <soap12:operation soapAction="http://tempuri.org/UploadFileWithCallWcf" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FSOPServer">
+    <wsdl:port name="FSOPServerSoap" binding="tns:FSOPServerSoap">
+      <soap:address location="http://localhost:820/FSOP/FSOPServer.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FSOPServerSoap12" binding="tns:FSOPServerSoap12">
+      <soap12:address location="http://localhost:820/FSOP/FSOPServer.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
