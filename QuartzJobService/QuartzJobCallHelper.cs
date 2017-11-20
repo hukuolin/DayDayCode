@@ -8,6 +8,8 @@ using Quartz.Impl;
 using System.Collections.Specialized;
 using System.Reflection;
 using Quartz;
+using Quartz.Core;
+using Quartz.Util;
 namespace QuartzJobService
 {
     public   delegate  void QuartzJobCallBack(object obj);
@@ -53,7 +55,11 @@ namespace QuartzJobService
                 nv.Add(typeof(T).FullName, typeof(T).FullName);
                 factory.Initialize(nv);
                // Properties props = new Properties();
+                QuartzSchedulerResources res=new QuartzSchedulerResources();
+                QuartzScheduler qs=new QuartzScheduler(res,new TimeSpan());
                 
+               // factory.Instantiate(null, qs);
+              
                 sch = factory.GetScheduler(scheduleName);
                 if (sch == null)
                 {

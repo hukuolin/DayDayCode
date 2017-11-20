@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Configuration;
+using BaseHelper;
 namespace DayDayStudyWin
 {
     static class Program
@@ -16,7 +17,54 @@ namespace DayDayStudyWin
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new ImageClickFrm());
+        }
+    }
+    public class AppConfig
+    {
+        static string dir;
+        public static string Dir
+        {
+            get {
+                if (string.IsNullOrEmpty(dir))
+                dir= new AssemblyExt().GetAppDir(AppStruct.WinApp);
+                return dir;
+            }
+        }
+        /// <summary>
+        /// 图标的路径信息
+        /// </summary>
+        public static string IConDir 
+        {
+            get 
+            {
+                string releative = ConfigurationManager.AppSettings["Icon"];
+                return Dir + releative;
+            }
+        }
+        public static string CodeImg12306Dir
+        {
+            get
+            {
+                string releative = ConfigurationManager.AppSettings["VerifyCodeImg12306"];
+                return Dir + releative;
+            }
+        }
+        /// <summary>
+        /// 图片排列模式
+        /// </summary>
+        public static int[] ImgNormal
+
+        {
+            get 
+            {
+                string cfg = ConfigurationManager.AppSettings["CodeImgNormal"];
+                string[] items = cfg.Split('*');
+                int[] xy = new int[2];
+                xy[0] = int.Parse(items[0]);
+                xy[1] = int.Parse(items[1]);
+                return xy;
+            }
         }
     }
 }

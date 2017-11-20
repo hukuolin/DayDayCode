@@ -10,8 +10,21 @@ namespace JustExample
 {
     class Program
     {
+        static void GetDateTime() 
+        {
+            string timeStr = "2017-11-17 16:08:29";
+            DateTime time = Convert.ToDateTime(timeStr);
+            long timeMilLong = time.Ticks;
+            string str= timeMilLong.Convert01();
+            // var js=1510906109905; //dt.getTime()
+            // 补码结果  922378286
+            long timeMil = Environment.TickCount;
+            long mil = DateTime.Now.Ticks;//当前时间的毫秒数
+
+        }
         static void Main(string[] args)
         {
+            GetDateTime();
             AsyncQueryData();
            
             //CallFSOPApi();
