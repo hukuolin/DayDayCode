@@ -22,7 +22,7 @@ namespace DayDayStudyWin
         {
             pbCodeImg.Click += new EventHandler(PictureBox_Click);
         }
-        Dictionary<int, string> selectIcon = new Dictionary<int, string>();
+        Dictionary<int, int[]> selectIcon = new Dictionary<int, int[]>();
         int avgX = 50, avgY = 50;//每张小图片平均像素
         /// <summary>
         /// 计算合成图中每张小图片的实际高度
@@ -72,6 +72,16 @@ namespace DayDayStudyWin
             int row = (mouse.Y-AppConfig.CodeTextHeightIn12306) / avgY;
             rtbMouse.Text += mouse.X + "\t" + mouse.Y+"\r\n";
             lsbSmallIcon.Items.Add("Icon: r=" + row + "\tc=" + column);
+            int index = row * AppConfig.ImgNormal[1] + column;
+            if (selectIcon.ContainsKey(index))
+            { //
+                selectIcon.Remove(index);
+            }
+            else 
+            {
+                selectIcon.Add(index, new int[]{ column,row});
+            }
+            InitWaterText(pbCodeImg);
         }
         void InitWaterText(PictureBox pb)
         { //使用水印形式来实现
@@ -81,32 +91,52 @@ namespace DayDayStudyWin
             avgX = img.Width / AppConfig.ImgNormal[0] + AppConfig.SmallIconSpanPXIn12306;
             //图片宽高 和控件的宽高不是同一单位
             avgY = CalculateIconHeight(img.Height) + AppConfig.SmallIconSpanPXIn12306;//小图片的平均高度
-
-            lsbSmallIcon.Items.Add("avg: w=" + avgX + "\th=" + avgY);
-            //在图片上生成水印
-            for (int row = 0; row <AppConfig.ImgNormal[1]; row++)
+            foreach (var item in selectIcon)
             {
-                for (int column = 0; column <AppConfig.ImgNormal[0]; column++)
-                {
-                    int x = avgX * column + 1*avgX / 5;
-                    int y = avgY * row + 3*avgY / 5;
-                    Image icon = Bitmap.FromFile(AppConfig.IConDir);
-                    int[] showPX = new int[] { 26, 26 };
-                    //需要调整图标的大小 22*22
-                    Bitmap targetImg = new System.Drawing.Bitmap(showPX[0], showPX[1]);
-                    Graphics iconImg = Graphics.FromImage((Image)targetImg);
-                    iconImg.DrawImage(icon, 0, 0, targetImg.Width, targetImg.Height);
-                    iconImg.Dispose();
-                    g.DrawImage(targetImg, new Point(x, y));
-                    targetImg.Dispose();
-                    icon.Dispose();
-                }
+                int[] iconLocation = item.Value;
+                int x = avgX * iconLocation[0] + 1 * avgX / 5;
+                int y = avgY * iconLocation[1] + 3 * avgY / 5;
+                ImageInsertIcon(new Point(x, y), g);
             }
+            
+            //lsbSmallIcon.Items.Add("avg: w=" + avgX + "\th=" + avgY);
+            //在图片上生成水印
+            //for (int row = 0; row <AppConfig.ImgNormal[1]; row++)
+            //{
+            //    for (int column = 0; column <AppConfig.ImgNormal[0]; column++)
+            //    {
+            //        int x = avgX * column + 1*avgX / 5;
+            //        int y = avgY * row + 3*avgY / 5;
+            //        Image icon = Bitmap.FromFile(AppConfig.IConDir);
+            //        int[] showPX = new int[] { 26, 26 };
+            //        //需要调整图标的大小 22*22
+            //        Bitmap targetImg = new System.Drawing.Bitmap(showPX[0], showPX[1]);
+            //        Graphics iconImg = Graphics.FromImage((Image)targetImg);
+            //        iconImg.DrawImage(icon, 0, 0, targetImg.Width, targetImg.Height);
+            //        iconImg.Dispose();
+            //        g.DrawImage(targetImg, new Point(x, y));
+            //        targetImg.Dispose();
+            //        icon.Dispose();
+            //    }
+            //}
             pb.Width = img.Width;
             pb.Height = img.Height;
             //pb.SizeMode = PictureBoxSizeMode.StretchImage;
             pb.Image = img;
             g.Dispose();
+        }
+        void ImageInsertIcon(Point size, Graphics g)
+        {
+            Image icon = Bitmap.FromFile(AppConfig.IConDir);
+            int[] showPX = new int[] { 26, 26 };
+            //需要调整图标的大小 22*22
+            Bitmap targetImg = new System.Drawing.Bitmap(showPX[0], showPX[1]);
+            Graphics iconImg = Graphics.FromImage((Image)targetImg);
+            iconImg.DrawImage(icon, 0, 0, targetImg.Width, targetImg.Height);
+            iconImg.Dispose();
+            g.DrawImage(targetImg, size);
+            targetImg.Dispose();
+            icon.Dispose();
         }
     }
 }
