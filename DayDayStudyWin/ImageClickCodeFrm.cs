@@ -71,23 +71,25 @@ namespace DayDayStudyWin
             int column = mouse.X / avgX;// +(mouse.X % avgX > 0 ? 1 : 0);//当前点击为第几列
             int row = (mouse.Y-AppConfig.CodeTextHeightIn12306) / avgY;
             rtbMouse.Text += mouse.X + "\t" + mouse.Y+"\r\n";
-            lsbSmallIcon.Items.Add(" r=" + row + "\tc=" + column);
+            lsbSmallIcon.Items.Add("Icon: r=" + row + "\tc=" + column);
         }
         void InitWaterText(PictureBox pb)
         { //使用水印形式来实现
            // pb.PictureBoxImage(AppConfig.CodeImg12306Dir);
             Image img = Bitmap.FromFile(AppConfig.CodeImg12306Dir);
             Graphics g = Graphics.FromImage(img);
-            int w=img.Width/AppConfig.ImgNormal[0];
+            avgX = img.Width / AppConfig.ImgNormal[0] + AppConfig.SmallIconSpanPXIn12306;
             //图片宽高 和控件的宽高不是同一单位
-            int h = CalculateIconHeight(img.Height);//小图片的平均高度
+            avgY = CalculateIconHeight(img.Height) + AppConfig.SmallIconSpanPXIn12306;//小图片的平均高度
+
+            lsbSmallIcon.Items.Add("avg: w=" + avgX + "\th=" + avgY);
             //在图片上生成水印
             for (int row = 0; row <AppConfig.ImgNormal[1]; row++)
             {
                 for (int column = 0; column <AppConfig.ImgNormal[0]; column++)
                 {
-                    int x = w * column + w / 2;
-                    int y = h * row + 5*h /8;
+                    int x = avgX * column + 1*avgX / 5;
+                    int y = avgY * row + 3*avgY / 5;
                     Image icon = Bitmap.FromFile(AppConfig.IConDir);
                     int[] showPX = new int[] { 26, 26 };
                     //需要调整图标的大小 22*22

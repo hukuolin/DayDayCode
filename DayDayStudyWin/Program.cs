@@ -82,5 +82,13 @@ namespace DayDayStudyWin
                 return h;
             }
         }
+        public static int SmallIconSpanPXIn12306 
+        {
+            get 
+            {
+                string cfg = ConfigurationManager.AppSettings["CodeIconSpanPXIn12306"];
+                return int.Parse(cfg);
+            }
+        }
     }
 }
