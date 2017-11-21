@@ -2,3 +2,8 @@ E:\Code\DayDayStudy\Example\WebModel\bin\Debug\WebModel.dll
 E:\Code\DayDayStudy\Example\WebModel\bin\Debug\WebModel.pdb
 E:\Code\DayDayStudy\Example\WebModel\obj\Debug\WebModel.dll
 E:\Code\DayDayStudy\Example\WebModel\obj\Debug\WebModel.pdb
+F:\SecurityData\JustJoy\DayDayCode\WebModel\bin\Debug\WebModel.dll
+F:\SecurityData\JustJoy\DayDayCode\WebModel\bin\Debug\WebModel.pdb
+F:\SecurityData\JustJoy\DayDayCode\WebModel\obj\Debug\WebModel.dll
+F:\SecurityData\JustJoy\DayDayCode\WebModel\obj\Debug\WebModel.pdb
+F:\SecurityData\JustJoy\DayDayCode\WebModel\obj\Debug\WebModel.csprojResolveAssemblyReference.cache
