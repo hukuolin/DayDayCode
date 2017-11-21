@@ -66,5 +66,21 @@ namespace DayDayStudyWin
                 return xy;
             }
         }
+        /// <summary>
+        /// 12306验证码的文本提示高度
+        /// </summary>
+        public static int CodeTextHeightIn12306
+        {
+            get 
+            {
+                string cfg = ConfigurationManager.AppSettings["CodeTextHeightIn12306"];
+                int h = 50;
+                if (!string.IsNullOrEmpty(cfg))
+                {
+                    h = int.Parse(cfg);
+                }
+                return h;
+            }
+        }
     }
 }

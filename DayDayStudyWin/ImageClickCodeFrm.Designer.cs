@@ -30,6 +30,7 @@
         {
             this.rtbMouse = new System.Windows.Forms.RichTextBox();
             this.pbCodeImg = new System.Windows.Forms.PictureBox();
+            this.lsbSmallIcon = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbCodeImg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -37,7 +38,7 @@
             // 
             this.rtbMouse.Location = new System.Drawing.Point(311, 12);
             this.rtbMouse.Name = "rtbMouse";
-            this.rtbMouse.Size = new System.Drawing.Size(215, 311);
+            this.rtbMouse.Size = new System.Drawing.Size(229, 171);
             this.rtbMouse.TabIndex = 8;
             this.rtbMouse.Text = "";
             // 
@@ -49,11 +50,21 @@
             this.pbCodeImg.TabIndex = 9;
             this.pbCodeImg.TabStop = false;
             // 
+            // lsbSmallIcon
+            // 
+            this.lsbSmallIcon.FormattingEnabled = true;
+            this.lsbSmallIcon.ItemHeight = 12;
+            this.lsbSmallIcon.Location = new System.Drawing.Point(312, 190);
+            this.lsbSmallIcon.Name = "lsbSmallIcon";
+            this.lsbSmallIcon.Size = new System.Drawing.Size(228, 124);
+            this.lsbSmallIcon.TabIndex = 10;
+            // 
             // ImageClickCodeFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 329);
+            this.Controls.Add(this.lsbSmallIcon);
             this.Controls.Add(this.pbCodeImg);
             this.Controls.Add(this.rtbMouse);
             this.Name = "ImageClickCodeFrm";
@@ -67,5 +78,6 @@
 
         private System.Windows.Forms.RichTextBox rtbMouse;
         private System.Windows.Forms.PictureBox pbCodeImg;
+        private System.Windows.Forms.ListBox lsbSmallIcon;
     }
 }
