@@ -62,8 +62,13 @@ namespace DayDayStudyWin
                     int x = w * column + w / 2;
                     int y = h * row + h / 2;
                     Image icon = Bitmap.FromFile(AppConfig.IConDir);
+                    int[] showPX = new int[] { 32, 32 };
                     //需要调整图标的大小 22*22
-                    g.DrawImage(icon, new Point(x, y));
+                    Bitmap targetImg = new System.Drawing.Bitmap(showPX[0], showPX[1]);
+                    
+                    Graphics iconImg = Graphics.FromImage((Image)targetImg);
+                    iconImg.DrawImage(icon, 0, 0, targetImg.Width, targetImg.Height);
+                    g.DrawImage(targetImg, new Point(x, y));
                 }
             }
             pb.SizeMode = PictureBoxSizeMode.StretchImage;
