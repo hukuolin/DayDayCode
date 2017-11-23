@@ -16,13 +16,14 @@ namespace JustExample
     /// </summary>
     public class BackStageHelper
     {
+        QuartzSchedule schedule = new QuartzSchedule(AppStruct.WinApp);
         public void OpenThreadFun() 
         {
             //异步1 查询总数据量
             AsyncCallback call = new AsyncCallback(t =>
             {
                 QuartUinData uin = new QuartUinData();
-                uin.QueryUinData(t);
+                uin.QueryUinData(t, schedule);
             });
             AsyncThreadHelper thread = new AsyncThreadHelper();
             object param=new object[] { "参数1", Guid.NewGuid(), DateTime.Now };
@@ -31,7 +32,7 @@ namespace JustExample
             AsyncCallback updateUinData = new AsyncCallback(t =>
             {
                 QuartUinData uin = new QuartUinData();
-                uin.SyncUinDataInDbTime(t);
+                uin.SyncUinDataInDbTime(t, schedule);
             });
             AsyncThreadHelper updateTh = new AsyncThreadHelper();
             updateTh.OpenAsyncThread(updateUinData, param, AppStruct.WinApp);
@@ -41,7 +42,7 @@ namespace JustExample
         class DoSyncUinDataInDbTime { }
         class QuartUinData
         {
-            public void QueryUinData(IAsyncResult result)
+            public void QueryUinData(IAsyncResult result, QuartzSchedule schedule)
             {
                 AsyncRequestHelper th = result as AsyncRequestHelper;
                 object param = th.callParam;
@@ -49,7 +50,8 @@ namespace JustExample
                 QuartzJobCallBack call = new QuartzJobCallBack(QuartQuery);
                 object[] callParam = new object[] { call, param };
                 //开启 异步循环调度
-                QuartzSchedule.CreateSchedule<QuartzJobCallHelper<DoQueryUinData>>(2, 0, DateTime.Now, callParam);
+                
+                schedule.CreateSchedule<QuartzJobCallHelper<DoQueryUinData>>(2, 0, DateTime.Now, callParam);
                 
                // QuartQuery(param);
             }
@@ -62,7 +64,7 @@ namespace JustExample
                 int row= async.Count(AppConfig.CountUinCmd);
                 string.Format( "Do Job Event,Query row=【{0}】",row).WriteLog(new AssemblyExt().GetAppDir(AppStruct.WinApp));
             }
-            public void SyncUinDataInDbTime(IAsyncResult result)
+            public void SyncUinDataInDbTime(IAsyncResult result, QuartzSchedule schedule)
             {
                 //同步数据库数据入库时间戳
                
@@ -72,7 +74,7 @@ namespace JustExample
                 QuartzJobCallBack call = new QuartzJobCallBack(DoSyncUinInDBDate);
                 object[] callParam = new object[] { call, param };
                 //开启 异步循环调度
-                QuartzSchedule.CreateSchedule<QuartzJobCallHelper<DoSyncUinDataInDbTime>>(60, 0, DateTime.Now, callParam);
+                schedule.CreateSchedule<QuartzJobCallHelper<DoSyncUinDataInDbTime>>(60, 0, DateTime.Now, callParam);
             }
             public void DoSyncUinInDBDate(object obj) 
             {
