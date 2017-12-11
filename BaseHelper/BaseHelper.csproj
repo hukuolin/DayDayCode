@@ -43,6 +43,7 @@
     <Compile Include="AssemblyExt.cs" />
     <Compile Include="AsyncRequestHelper.cs" />
     <Compile Include="DataConvert.cs" />
+    <Compile Include="DateTimeHelper.cs" />
     <Compile Include="FileHelper.cs" />
     <Compile Include="LoggerHeper.cs" />
     <Compile Include="NetworkHelper.cs" />

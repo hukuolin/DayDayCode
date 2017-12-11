@@ -24,6 +24,7 @@ namespace JustExample
         }
         static void Main(string[] args)
         {
+            DateTest();
             GetDateTime();
             AsyncQueryData();
            
@@ -99,6 +100,10 @@ namespace JustExample
             back.OpenThreadFun();
             back.TestThread();
             //轮询
+        }
+        static void DateTest() 
+        {
+            DateTimeHelper.GetWeekInYearTime(2018, 1);
         }
     }
     
