@@ -63,5 +63,18 @@ namespace BaseHelper
                 return countWeek;
             }
         }
+
+        /// <summary>
+        /// 该年总共有多少周
+        /// </summary>
+        /// <param name="year"></param>
+        /// <returns></returns>
+        public static  int GetYearSumWeeks(int year)
+        {
+            GregorianCalendar gc = new GregorianCalendar();
+            DateTime yearTime = new DateTime(year, 12, 31);
+            int weekOfYear = gc.GetWeekOfYear(yearTime, CalendarWeekRule.FirstDay, DayOfWeek.Monday);
+            return weekOfYear;
+        }
     }
 }

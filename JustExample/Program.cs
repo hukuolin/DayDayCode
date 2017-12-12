@@ -31,7 +31,7 @@ namespace JustExample
             int.TryParse(line, out year);
             while (year > 0)
             {
-                int weeks = DateTimeHelper.GetYearSumWeek(year);
+                int weeks = DateTimeHelper.GetYearSumWeeks(year);
                 Console.WriteLine(string.Format("{0}年总共有{1}周", year, weeks));
                 Console.WriteLine("请输入年份:");
                 line = Console.ReadLine();
