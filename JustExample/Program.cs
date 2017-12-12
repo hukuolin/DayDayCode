@@ -24,6 +24,19 @@ namespace JustExample
         }
         static void Main(string[] args)
         {
+            Console.WriteLine("请输入年份:");
+            string  line= Console.ReadLine();
+            Console.WriteLine(line);
+            int year = 0;
+            int.TryParse(line, out year);
+            while (year > 0)
+            {
+                int weeks = DateTimeHelper.GetYearSumWeek(year);
+                Console.WriteLine(string.Format("{0}年总共有{1}周", year, weeks));
+                Console.WriteLine("请输入年份:");
+                line = Console.ReadLine();
+                int.TryParse(line, out year);
+            }
             DateTest();
             GetDateTime();
             AsyncQueryData();
